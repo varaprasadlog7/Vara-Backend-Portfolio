@@ -1,6 +1,6 @@
 "use client"; // Add this directive to mark the component as a Client Component
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import dynamic from 'next/dynamic';
 import { Navbar } from './Components/Mainsections/Navbar/Navbar';
 import { navItems } from '../public/data';
@@ -16,29 +16,26 @@ const Contact = dynamic(() => import('./Components/Mainsections/Contact/Contact'
 
 
 export default function Home() {
-  const [showStarsCanvas, setShowStarsCanvas] = useState(false);
-
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setShowStarsCanvas(true);
-  //   }, 5000); // 5000 milliseconds = 8 seconds
-
-  //   return () => clearTimeout(timer); // Clean up the timer on component unmount
-  // }, []);
-
   return (
-    <main>
+    <main className="main-shell">
       <GlobalStyles />
+      <div className="bg-orb orb-cyan" />
+      <div className="bg-orb orb-amber" />
+      <div className="bg-orb orb-slate" />
       <Navbar navItems={navItems} className="nav" />
-      <div className="relative z-0">
-        <Hero idName="#hero" />
-        <Experience idName="#about" />
-        <Projects idName="#projects" />
-        <Skills idName="skills" />
-        <Tech idName="tech" />
-        <Contact idName="#contact" />
-        <Footer idName=''/>
-{/*         {showStarsCanvas && <StarsCanvas />} */}
+      <div className="relative z-10 content-shell">
+        <section className="section-block"><Hero idName="#hero" /></section>
+        <div className="section-divider" />
+        <section className="section-block"><Experience idName="#about" /></section>
+        <div className="section-divider" />
+        <section className="section-block"><Projects idName="#projects" /></section>
+        <div className="section-divider" />
+        <section className="section-block"><Skills idName="skills" /></section>
+        <div className="section-divider" />
+        <section className="section-block"><Tech idName="tech" /></section>
+        <div className="section-divider" />
+        <section className="section-block"><Contact idName="#contact" /></section>
+        <section className="section-block"><Footer idName=''/></section>
       </div>
     </main>
   );

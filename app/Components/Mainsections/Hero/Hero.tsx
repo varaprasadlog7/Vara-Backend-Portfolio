@@ -156,10 +156,17 @@ const Hero: React.FC = () => {
         </div>
         <div className="hero-info">
           <motion.h2 className="text-element" variants={textVariant(0.5)}>VARA PRASAD</motion.h2>
-          <motion.h1 className="h1 text-element" variants={textVariant(1)}>AI & WEB DEVELOPER</motion.h1>
+          <motion.h1 className="h1 text-element" variants={textVariant(1)}>Building Premium AI-Driven Digital Products</motion.h1>
           <div className="h3-container text-element">
-            <motion.h3 className="h3 " variants={textVariant(1.5)}>AI Data Analyst &</motion.h3>
-            <motion.h3 className="h3" variants={textVariant(2)}>Full Stack <span className="gradient-span">Web Developer</span></motion.h3>
+            <motion.h3 className="h3 " variants={textVariant(1.5)}>Full Stack Engineer, AI Data Analyst,</motion.h3>
+            <motion.h3 className="h3" variants={textVariant(2)}>and Product-Focused <span className="gradient-span">Web Architect</span></motion.h3>
+          </div>
+          <p className="hero-proof text-element">
+            Trusted by founders and teams to ship performant experiences with conversion-focused UX.
+          </p>
+          <div className="hero-cta text-element">
+            <a href="#projects" className="primary-cta">Explore Projects</a>
+            <a href="#contact" className="secondary-cta">Book a Call</a>
           </div>
           <motion.div variants={sliderVariant} animate='scrollButton' className="scroll text-element">
             <a href="#about"> <Image src={scroll} alt="scroll-img" className="scrollImg" /></a>
@@ -249,29 +256,44 @@ let HeroContainer = styled.div`
     align-items: center;
     z-index: 3 !important;
     position: relative;
+    padding: 2rem 2.4rem;
+    margin-right: 2rem;
+    background: linear-gradient(135deg, rgba(10, 18, 32, 0.62), rgba(10, 12, 20, 0.3));
+    border: 1px solid rgba(124, 157, 239, 0.2);
+    border-radius: 1.25rem;
+    box-shadow: 0 18px 50px rgba(4, 10, 20, 0.45);
+    backdrop-filter: blur(10px);
 
     h2 {
-      letter-spacing: 1rem;
-      color: #3a80e9;
+      letter-spacing: 0.62rem;
+      color: #8ab8ff;
       font-weight: 700;
       font-size: 1.2rem;
       position: relative;
+      text-shadow: 0 0 22px rgba(54, 128, 255, 0.55);
     }
 
     .h1 {
-      font-size: 3.3rem;
-      font-weight: 700;
+      font-size: 3.35rem;
+      font-weight: 800;
       position: relative;
+      text-align: center;
+      line-height: 1.05;
+      background: linear-gradient(100deg, #f8fafc 2%, #9ec5ff 48%, #59d8ff 98%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     .h3-container {
       z-index: 2;
       position: relative;
+      text-align: center;
 
       .h3 {
         font-size: 1.9rem;
         font-weight: 600;
-        color: #949494;
+        color: #b8c2d4;
         display: flex;
         position: relative;
       }
@@ -284,6 +306,49 @@ let HeroContainer = styled.div`
         color: transparent;
         display: inline-block;
       }
+    }
+
+    .hero-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-top: 0.4rem;
+
+      a {
+        font-family: "Sora", sans-serif;
+        letter-spacing: 0.02em;
+        font-size: 0.92rem;
+        font-weight: 700;
+        border-radius: 999px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      }
+
+      .primary-cta {
+        color: #021322;
+        padding: 0.7rem 1.2rem;
+        background: linear-gradient(105deg, #f6a62f 8%, #2ecdf2 94%);
+        box-shadow: 0 10px 25px rgba(40, 145, 213, 0.35);
+      }
+
+      .secondary-cta {
+        color: #e5efff;
+        padding: 0.68rem 1.2rem;
+        border: 1px solid rgba(143, 174, 255, 0.35);
+        background: rgba(11, 22, 36, 0.7);
+      }
+
+      .primary-cta:hover,
+      .secondary-cta:hover {
+        transform: translateY(-2px);
+      }
+    }
+
+    .hero-proof {
+      max-width: 38rem;
+      text-align: center;
+      color: #afbdd3;
+      font-size: 1rem;
+      line-height: 1.6;
     }
 
     .scroll {
@@ -300,7 +365,7 @@ let HeroContainer = styled.div`
       bottom: 0.5rem;
       font-size: 35vh;
       white-space: nowrap;
-      color: rgb(25, 25, 25);
+      color: rgba(40, 55, 88, 0.35);
       width: 50vw;
       font-weight: 500;
       z-index: -3;
@@ -311,6 +376,8 @@ let HeroContainer = styled.div`
     .hero-info {
       gap: 1rem;
       min-height: 100vh;
+      margin-right: 1rem;
+      padding: 1.8rem;
 
       h2 {
         font-weight: 700;
@@ -328,6 +395,16 @@ let HeroContainer = styled.div`
           font-size: 1.4rem;
           font-weight: 600;
         }
+      }
+
+      .hero-cta {
+        a {
+          font-size: 0.84rem;
+        }
+      }
+
+      .hero-proof {
+        font-size: 0.9rem;
       }
     }
   }
@@ -362,6 +439,11 @@ let HeroContainer = styled.div`
     .hero-info {
       gap: 0.4rem;
       min-height: 35vh;
+      margin-right: 0;
+      margin-left: 0;
+      border-radius: 1rem;
+      padding: 1.2rem 0.75rem;
+      background: linear-gradient(130deg, rgba(8, 16, 30, 0.6), rgba(10, 13, 20, 0.24));
 
       h2 {
         font-weight: 700;
@@ -379,6 +461,22 @@ let HeroContainer = styled.div`
           font-size: 1rem;
           font-weight: 600;
         }
+      }
+
+      .hero-cta {
+        flex-direction: column;
+        width: 100%;
+        max-width: 18rem;
+
+        a {
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      .hero-proof {
+        font-size: 0.82rem;
+        padding: 0 0.4rem;
       }
 
       .scrollImg {

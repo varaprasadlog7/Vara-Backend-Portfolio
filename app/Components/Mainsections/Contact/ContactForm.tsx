@@ -6,6 +6,8 @@ import { cn } from "@/lib/utils";
 import emailjs from "@emailjs/browser";
 
 export function ContactForm() {
+  const [isSending, setIsSending] = useState(false);
+  const [statusMessage, setStatusMessage] = useState("");
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -22,6 +24,8 @@ export function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSending(true);
+    setStatusMessage("");
 
     emailjs
       .send(
@@ -38,7 +42,7 @@ export function ContactForm() {
       )
       .then(
         () => {
-          alert("Thank you. I will get back to you as soon as possible.");
+          setStatusMessage("Message sent successfully. I will get back to you soon.");
 
           setForm({
             name: "",
@@ -48,16 +52,21 @@ export function ContactForm() {
         },
         (error) => {
           console.error(error);
-          alert("Ahh, something went wrong. Please try again.");
+          setStatusMessage("Unable to send right now. Please try again in a moment.");
         }
-      );
+      )
+      .finally(() => setIsSending(false));
   };
 
   return (
-    <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
-      <h2 className="font-bold text-x1 text-neutral-800 dark:text-neutral-200">
+    <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-[#0c1422]/85 border border-white/10 backdrop-blur-xl">
+      <p className="text-xs uppercase tracking-[0.2em] text-cyan-300/80 mb-2">Let us build something impactful</p>
+      <h2 className="font-bold text-x1 text-neutral-100 dark:text-neutral-200">
         Contact Me.
       </h2>
+      <p className="text-sm text-slate-300 mt-2">
+        Share your idea, timeline, and goals. I will reply with a focused plan.
+      </p>
 
       <form className="my-8" onSubmit={handleSubmit}>
         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-2 mb-4">
@@ -91,18 +100,25 @@ export function ContactForm() {
             name="message"
             value={form.message}
             onChange={handleChange}
-            className="w-full px-3 py-2 border bg-[#27272a] rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-black dark:focus:ring-white border-[#343434]"
-            rows={1}
+            className="w-full px-3 py-2 border bg-[#171f2e] text-white rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-cyan-400 border-[#34435a] placeholder:text-slate-400"
+            rows={4}
+            placeholder="Tell me about your project..."
+            required
           />
         </LabelInputContainer>
 
         <button
-          className="bg-gradient-to-br relative group/btn from-black dark:from-zinc-900 dark:to-zinc-900 to-neutral-600 block dark:bg-zinc-800 w-full text-white rounded-md h-10 font-medium shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:shadow-[0px_1px_0px_0px_var(--zinc-800)_inset,0px_-1px_0px_0px_var(--zinc-800)_inset]"
+          className="bg-gradient-to-br relative group/btn from-[#183157] to-[#0c1b30] block w-full text-white rounded-md h-11 font-semibold tracking-wide shadow-[0_10px_22px_rgba(8,30,62,0.55)]"
           type="submit"
+          disabled={isSending}
         >
-          Send &rarr;
+          {isSending ? "Sending..." : "Send Message ->"}
           <BottomGradient />
         </button>
+
+        {statusMessage && (
+          <p className="mt-4 text-sm text-cyan-200/90">{statusMessage}</p>
+        )}
 
       </form>
     </div>

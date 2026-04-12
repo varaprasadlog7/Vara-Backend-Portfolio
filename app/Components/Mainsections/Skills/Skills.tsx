@@ -62,16 +62,18 @@ const SkillsContainer = styled.div`
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 0.5rem;
+            letter-spacing: 0.02em;
             .span-gradient {
-                background: linear-gradient(90deg, rgba(2, 0, 36, 1) -30%, rgba(31, 83, 198, 1) 30%, rgba(0, 212, 255, 1) 100%);
+                background: linear-gradient(98deg, #f7ae42 12%, #66a3ff 55%, #27d2eb 95%);
                 -webkit-background-clip: text;
                 background-clip: text;
                 color: transparent;
             }
         }
         p {
-            color: #949494;
+            color: #a9b2c4;
             font-size: 1.1rem;
+            max-width: 44rem;
         }
     }
 
@@ -84,26 +86,27 @@ const SkillsContainer = styled.div`
     }
 
     .skill-card {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        background: linear-gradient(155deg, rgba(14, 22, 36, 0.88), rgba(10, 15, 26, 0.72));
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(115, 147, 228, 0.24);
         border-radius: 20px;
         padding: 2rem;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 14px 35px rgba(3, 8, 20, 0.42);
 
         &:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border-color: rgba(31, 83, 198, 0.5);
+            transform: translateY(-7px);
+            box-shadow: 0 18px 38px rgba(1, 8, 24, 0.58);
+            border-color: rgba(39, 210, 235, 0.55);
         }
 
         h2 {
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 1.5rem;
-            color: #e2e2e2;
+            color: #e7efff;
             text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(111, 140, 223, 0.28);
             padding-bottom: 0.75rem;
         }
 
@@ -119,7 +122,7 @@ const SkillsContainer = styled.div`
             gap: 0.75rem;
             
             .icon-wrapper {
-                background: rgba(255, 255, 255, 0.05);
+                background: rgba(109, 138, 221, 0.18);
                 padding: 0.5rem;
                 border-radius: 10px;
                 display: flex;
@@ -132,13 +135,13 @@ const SkillsContainer = styled.div`
 
             span {
                 font-size: 0.95rem;
-                color: #bcbcbc;
-                font-weight: 500;
+                color: #c4cee2;
+                font-weight: 600;
             }
 
             &:hover {
                 .icon-wrapper {
-                    background: rgba(255, 255, 255, 0.1);
+                    background: rgba(39, 210, 235, 0.3);
                 }
                 span {
                     color: white;

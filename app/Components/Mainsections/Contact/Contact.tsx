@@ -80,19 +80,31 @@ let ContactContainer = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     overflow: hidden !important;
+
     .form-container,.globe-container{
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 1rem;
     }
+
+    .form-container {
+      margin: 1.2rem;
+      border-radius: 1.2rem;
+      border: 1px solid rgba(126, 160, 241, 0.25);
+      background: linear-gradient(150deg, rgba(11, 20, 35, 0.8), rgba(13, 21, 32, 0.58));
+      box-shadow: 0 16px 34px rgba(3, 8, 20, 0.42);
+    }
+
     .globe-continer:active{
       cursor: grabbing;
     }
+
     .globe-container{
       .my-img{
       max-width: 25rem;
       padding-left: 2rem;
+      filter: drop-shadow(0 16px 30px rgba(2, 8, 20, 0.5));
     }
     }
 
@@ -100,6 +112,11 @@ let ContactContainer = styled.div`
       padding-top: 5rem;
       display: flex;
       flex-direction: column-reverse;
+
+      .form-container {
+        margin: 0.4rem;
+        width: calc(100% - 1rem);
+      }
 
       .globe-container{
         .my-img{

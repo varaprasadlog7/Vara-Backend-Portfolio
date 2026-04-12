@@ -56,6 +56,7 @@ export default SectionWrapper(Experience, 'about');
 
 const ExperienceContainer = styled.div`
     min-height: 100vh;
+    padding: 1rem 0 2rem;
 
 
     .exp-title {
@@ -65,6 +66,7 @@ const ExperienceContainer = styled.div`
         h1 {
             font-size: 3rem;
             font-weight: 800;
+            letter-spacing: 0.02em;
             
             .span-gradient {
                 background: linear-gradient(90deg, rgba(2, 0, 36, 1) -30%, rgba(31, 83, 198, 1) 30%, rgba(0, 212, 255, 1) 100%);
@@ -93,8 +95,12 @@ const ExperienceContainer = styled.div`
                 padding: 2rem;
                 display: flex;
                 justify-content: space-between;
-                min-width: 90vw;
+                min-width: min(90vw, 1080px);
                 cursor: grab;
+                border: 1px solid rgba(114, 148, 227, 0.24);
+                border-radius: 1.15rem;
+                background: linear-gradient(145deg, rgba(12, 20, 35, 0.8), rgba(14, 24, 42, 0.62));
+                box-shadow: 0 14px 30px rgba(2, 7, 20, 0.4);
             }
 
             .info-text {
@@ -111,6 +117,7 @@ const ExperienceContainer = styled.div`
 
     @media only screen and (max-width: 770px) {
         min-height: 80vh !important;
+        padding: 0.5rem 0 2rem;
 
         .exp-card-container {
             min-height: 80vh !important;
@@ -131,9 +138,16 @@ const ExperienceContainer = styled.div`
     }
 
     @media only screen and (max-width: 610px) {
+        .exp-card {
+            padding: 0.5rem !important;
+        }
+
         .exp-info-container {
             flex-direction: column;
             align-items: center;
+            gap: 0.8rem;
+            min-width: 92vw !important;
+            padding: 1rem !important;
         }
 
         .info-text {
@@ -151,6 +165,10 @@ const ExperienceContainer = styled.div`
     @media only screen and (max-width: 480px) {
         .exp-title h1 {
             font-size: 1.5rem;
+        }
+
+        .exp-card-container {
+            min-height: 70vh !important;
         }
 
         .info-text {

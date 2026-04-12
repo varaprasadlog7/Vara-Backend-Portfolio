@@ -21,6 +21,7 @@ const Tech: React.FC = () => {
     const techRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
+        const observedNode = techRef.current;
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
@@ -32,13 +33,13 @@ const Tech: React.FC = () => {
             { threshold: 0.1 }
         );
 
-        if (techRef.current) {
-            observer.observe(techRef.current);
+        if (observedNode) {
+            observer.observe(observedNode);
         }
 
         return () => {
-            if (techRef.current) {
-                observer.unobserve(techRef.current);
+            if (observedNode) {
+                observer.unobserve(observedNode);
             }
         };
     }, []);
