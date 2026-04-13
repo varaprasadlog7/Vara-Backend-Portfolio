@@ -33,7 +33,9 @@ const Projects = () => {
                 <p className='impact-line'>{project.impact}</p>
               </CardItem>
               <CardItem className="card-item" translateZ={90}>
-                <Image src={project.img} className='project-img' alt={project.title} width={450} height={450} />
+                <a href={project.link} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title}`}>
+                  <Image src={project.img} className='project-img' alt={project.title} width={450} height={450} />
+                </a>
               </CardItem>
               <CardItem className="card-item icons-btn-div" translateZ={40}>
                 <div className="icon-list">
@@ -41,14 +43,6 @@ const Projects = () => {
                     <Image key={index} src={icon} alt={'icon-img'} width={20} height={20} />
                   ))}
                 </div>
-                <a href={project.link} className='btn' target="_blank" rel="noopener noreferrer">
-                  <div className="live-button">
-                    <button className="px-7 py-1.5 rounded-full relative bg-slate-700 text-white text-sm hover:shadow-2xl hover:shadow-white/[0.1] transition duration-200 border border-slate-600">
-                      <div className="absolute inset-x-0 h-px w-1/2 mx-auto -top-px shadow-2xl  bg-gradient-to-r from-transparent via-teal-500 to-transparent" />
-                      <span className="relative z-20">Open Live Project</span>
-                    </button>
-                  </div>
-                </a>
               </CardItem>
             </CardBody>
           </CardContainer>
@@ -136,6 +130,7 @@ let ProjectContainer = styled.div`
       }
 
       .card-item{
+        overflow: hidden;
         h2{
           font-size: 1.35rem;
           font-weight: 700;
@@ -178,27 +173,22 @@ let ProjectContainer = styled.div`
           border-radius: 1rem;
           margin-top: -0.6rem;
           border: 1px solid rgba(255, 255, 255, 0.08);
+          max-width: 100%;
+          height: auto;
+          object-fit: cover;
+          width: 100%;
         }
       }
       
       .icons-btn-div{
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-start;
         min-width: 100%;
         align-items: center;
         .icon-list{
         display: flex;
         flex-direction: row;
         gap: 0.3rem;
-      }
-
-      .btn{
-        font-size: 0.8rem;
-
-        button {
-          background: linear-gradient(110deg, rgba(35, 62, 110, 0.82), rgba(24, 41, 71, 0.9));
-          border-color: rgba(102, 142, 239, 0.55);
-        }
       }
       }
   }

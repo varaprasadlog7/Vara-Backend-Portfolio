@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
 
-export default function Tarun(props) {
+export default function Vara(props) {
   const { nodes, materials } = useGLTF('/whiteShirt_0727110258.glb')
   return (
     <group {...props} dispose={null} scale={2}>
