@@ -10,6 +10,17 @@ export const navItems = [
 export const projects = [
   {
     id: 1,
+    title: "Research Lab",
+    des: "A modern scientific platform presenting breakthrough work in advanced materials, quantum computing, and global publications.",
+    category: "Scientific Research Platform",
+    duration: "6 Weeks",
+    impact: "Improved discoverability of research domains, publications, and opportunities.",
+    img: "/research-lab.png",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/fm.svg"],
+    link: "https://research-lab-two.vercel.app/",
+  },
+  {
+    id: 2,
     title: "MK-Digital-Dynamics",
     des: "We are a unique digital marketing and web development company dedicated to transforming businesses of all sizes, from startups to multinational organizations.",
     category: "Agency Platform",
@@ -20,7 +31,7 @@ export const projects = [
     link: "https://www.mkdigitaldynamics.com/",
   },
   {
-    id: 2,
+    id: 3,
     title: "FlashType",
     des: "FlashTypee lets users measure typing speed in various time modes and create accounts to save and analyze their results.",
     category: "SaaS Product",
@@ -31,7 +42,7 @@ export const projects = [
     link: "https://flashtypee.netlify.app/",
   },
   {
-    id: 3,
+    id: 4,
     title: "Crypto Tracker",
     des: "CryptoTracker allows users to track live data and compare two currencies to determine the best option. It also provides historical data from the past year.",
     category: "Data Visualization",
@@ -42,7 +53,7 @@ export const projects = [
     link: "https://crypto-currency-trackerr.netlify.app/",
   },
   {
-    id: 4,
+    id: 5,
     title: "CRM Project",
     des: "ecosystem is a software platform designed to help businesses manage interactions with their customers, clients, and prospects effectively.",
     category: "B2B Dashboard",
@@ -51,17 +62,6 @@ export const projects = [
     img: "/crm.png",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/zustand.svg"],
     link: "https://crm-dashboard-rosy.vercel.app/",
-  },
-  {
-    id: 5,
-    title: "Research Lab",
-    des: "A modern scientific platform presenting breakthrough work in advanced materials, quantum computing, and global publications.",
-    category: "Scientific Research Platform",
-    duration: "6 Weeks",
-    impact: "Improved discoverability of research domains, publications, and opportunities.",
-    img: "/research-lab.png",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/fm.svg"],
-    link: "https://research-lab-two.vercel.app/",
   },
 ];
 
